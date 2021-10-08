@@ -3,7 +3,9 @@ name: Python build pyinstaller
 ## Set the trigger policy.
 ## In this case, the workflow is execute on a `push` event,
 ## or when a new commit is pushed to the repository
-on: [push]
+on: #[push]
+  push:
+    branches: [mas] # [ main ]
 ## List the steps to be executed by the workflow
 jobs:
   ## Set the name of the job
