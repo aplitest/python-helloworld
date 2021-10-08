@@ -30,7 +30,7 @@ jobs:
         
     - name: build and compiled
       run: |
-        python -m pyinstaller app.py
+        pyinstaller app.py
         
     - name: check windows builded
       run: |
