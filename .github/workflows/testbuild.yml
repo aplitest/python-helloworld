@@ -7,7 +7,7 @@ on: [push]
 ## List the steps to be executed by the workflow
 jobs:
   ## Set the name of the job
-  check-python-version:
+  build-python-compiled:
     ## Configure the operating system the workflow should run on.
     ## In this case, the job on Windows
     runs-on: windows-latest
