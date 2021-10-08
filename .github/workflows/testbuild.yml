@@ -7,7 +7,7 @@ on: [push]
 ## List the steps to be executed by the workflow
 jobs:
   ## Set the name of the job
-  build-python-compiled:
+  test-python-version:
     ## Configure the operating system the workflow should run on.
     ## In this case, the job on Windows
     runs-on: windows-latest
@@ -17,4 +17,14 @@ jobs:
       with:
         python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
         architecture: 'x86' # optional x64 or x86. Defaults to x64 if not specified
-    - run: python --version
+    - name: test windows staff
+      run: |
+        dir  
+    - name: check verzion
+      run: |
+        python --version
+        python "print(good job..)"
+    - name: test pytest staff
+      run: |
+        pytest  
+  
