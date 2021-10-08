@@ -1,8 +1,20 @@
-runs-on: windows-latest
-steps:
-- uses: actions/checkout@v2
-- uses: actions/setup-python@v2
-  with:
-    python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-    architecture: 'x86' # optional x64 or x86. Defaults to x64 if not specified
-- run: python --version
+##  Named of the workflow.
+name: Python version
+## Set the trigger policy.
+## In this case, the workflow is execute on a `push` event,
+## or when a new commit is pushed to the repository
+on: [push]
+## List the steps to be executed by the workflow
+jobs:
+  ## Set the name of the job
+  check-python-version:
+    ## Configure the operating system the workflow should run on.
+    ## In this case, the job on Windows
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+        architecture: 'x86' # optional x64 or x86. Defaults to x64 if not specified
+    - run: python --version
