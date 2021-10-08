@@ -35,4 +35,11 @@ jobs:
     - name: check windows builded
       run: |
         dir 
-        dir build        
+        dir build      
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: MrMR
+        author_email: MrMR@example.comMrMR
+        message: 'tsting commit action and push'
+        add: 'build/*'
