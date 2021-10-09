@@ -53,6 +53,7 @@ jobs:
         add: 'releases/*'
 
   test-python-version-7:
+    needs: test-python-version
     ## Configure the operating system the workflow should run on.
     ## In this case, the job on Windows
     runs-on: windows-2016
