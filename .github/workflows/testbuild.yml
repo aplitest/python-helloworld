@@ -45,7 +45,13 @@ jobs:
       run: |
         "%programfiles(x86)%\Inno Setup 6\iscc.exe" ".\innoswork.iss"
       shell: cmd
-    
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: MrMR
+        author_email: MrMR@example.comMrMR
+        message: 'tsting commit action and push'
+        add: 'releases/*'
 
   test-python-version-7:
     needs: test-python-version
@@ -60,7 +66,7 @@ jobs:
         architecture: 'x86' # optional x64 or x86. Defaults to x64 if not specified
     - name: test windows staff
       run: |
-        dir  
+        dir releases
     - name: check verzion
       run: |
         python --version
@@ -68,6 +74,8 @@ jobs:
       run: |
         python -m pip install --upgrade pip  
         pip install  pyinstaller
+    - name: pull changes
+      run: |
         
     - name: delete old compiled build
       run: |
@@ -80,7 +88,7 @@ jobs:
     - name: check windows builded
       run: |
         dir 
-        dir build
+        dir releases
     - name: create innosetup
       run: |
         "%programfiles(x86)%\Inno Setup 6\iscc.exe" /F"setupwin2016" ".\innoswork.iss"
