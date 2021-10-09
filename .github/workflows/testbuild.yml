@@ -78,6 +78,7 @@ jobs:
         pip install  pyinstaller
     - name: pull changes
       run: |
+        git pull
         
     - name: delete old compiled build
       run: |
