@@ -31,6 +31,7 @@ jobs:
     - name: delete old compiled build
       run: |
         rd /s /q ".\build"
+        rd /s /q ".\releases"
       shell: cmd
     - name: build and compiled
       run: |
