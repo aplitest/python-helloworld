@@ -19,7 +19,7 @@ jobs:
         architecture: 'x86' # optional x64 or x86. Defaults to x64 if not specified
     - name: test windows staff
       run: |
-        dir  
+        dir 
     - name: check verzion
       run: |
         python --version
@@ -32,6 +32,7 @@ jobs:
       run: |
         rd /s /q ".\build"
         rd /s /q ".\releases"
+        dir
       shell: cmd
     - name: build and compiled
       run: |
@@ -41,6 +42,7 @@ jobs:
       run: |
         dir 
         dir build
+        dir releases
     - name: create innosetup
       run: |
         "%programfiles(x86)%\Inno Setup 6\iscc.exe" ".\innoswork.iss"
@@ -50,7 +52,7 @@ jobs:
       with:
         author_name: MrMR
         author_email: MrMR@example.comMrMR
-        message: 'tsting commit action and push'
+        message: 'tsting commit 10 action and push'
         add: 'releases/*'
 
   test-python-version-7:
